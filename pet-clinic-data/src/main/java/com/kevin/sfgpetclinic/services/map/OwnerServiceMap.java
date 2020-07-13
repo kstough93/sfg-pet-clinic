@@ -5,11 +5,13 @@ import com.kevin.sfgpetclinic.model.Pet;
 import com.kevin.sfgpetclinic.services.OwnerService;
 import com.kevin.sfgpetclinic.services.PetService;
 import com.kevin.sfgpetclinic.services.PetTypeService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default", "map"})
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
     private final PetTypeService petTypeService;
